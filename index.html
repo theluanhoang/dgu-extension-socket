@@ -12,7 +12,7 @@
         <div id="result"></div>
         <script>
         // Tạo kết nối đến server
-        const socket = io('wss://extension-services.dgu.io.vn/'); // Thay đổi địa chỉ và cổng tương ứng với server của bạn
+        const socket = io('https://dgu-extension-socker.onrender.com', {transports: ['websocket','polling']}); // Thay đổi địa chỉ và cổng tương ứng với server của bạn
 
         // Lắng nghe sự kiện 'connect' khi kết nối thành công
         socket.on('connect', () => {
