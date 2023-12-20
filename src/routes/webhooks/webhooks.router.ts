@@ -5,12 +5,12 @@ import express, { Router } from "express";
 
 const router: Router = express.Router();
 
-router.get(
+router.post(
     "/webhooks/handler-bank-transfer",
     verifySecureTokenMiddleware,
     handleError(WebhookController.handleBankTransfer),
 );
 
-router.post("/webhooks", handleError(WebhookController.notification));
+router.get("/webhooks", handleError(WebhookController.notification));
 
 export { router as Webhook };
